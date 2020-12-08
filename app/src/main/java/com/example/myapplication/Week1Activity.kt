@@ -54,7 +54,7 @@ class Week1Activity : AppCompatActivity() {
             }
             else if (rdo_integer.isChecked == true)
             {
-                if(num1 == edt_num1.text.toString() || num2 == edt_num2.text.toString())
+                if(num1 != edt_num1.text.toString() || num2 != edt_num2.text.toString())
                 {
                     val builder = AlertDialog.Builder(this)
                     builder.setTitle("WARNING")
