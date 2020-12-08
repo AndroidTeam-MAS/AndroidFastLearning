@@ -9,7 +9,7 @@ import kotlin.random.Random
 
 class Week1Activity : AppCompatActivity() {
 
-    private lateinit var edt_num1: EditText
+    private lateinit var edt_num1: TextView
     private lateinit var edt_num2: EditText
     private lateinit var txt_operator: TextView
     private lateinit var txt_answer: TextView
@@ -33,8 +33,8 @@ class Week1Activity : AppCompatActivity() {
         btn_answer = findViewById(R.id.btn_answer)
 
         btn_answer.setOnClickListener {
-            var num1 = edt_num1.text.toString().trim()
-            var num2 = edt_num2.text.toString().trim()
+            var num1 = edt_num1.text.toString()
+            var num2 = edt_num2.text.toString()
 
             rdo_string = findViewById(R.id.rdo_string)
             rdo_integer = findViewById(R.id.rdo_integer)
@@ -48,14 +48,20 @@ class Week1Activity : AppCompatActivity() {
             {
                 Toast.makeText(this,"Please Input Data",Toast.LENGTH_SHORT).show()
             }
-            else if (rdo_string.isChecked == true)
+
+            if (rdo_string.isChecked)
             {
                 txt_answer.text = "Answer is : "+num1 + num2
             }
-            else if (rdo_integer.isChecked == true)
+            else
             {
-                if(num1 != edt_num1.text.toString() || num2 != edt_num2.text.toString())
+                edt_num1.text =""
+                edt_num2.setText("")
+                if(num1 == edt_num1.text.toString() && num2 == edt_num2.text.toString())
                 {
+                    txt_answer.text = "Answer is : ${num1 + num2} "
+                }
+                else {
                     val builder = AlertDialog.Builder(this)
                     builder.setTitle("WARNING")
                     builder.setMessage("Please Can only enter numbers Do not enter letters")
@@ -65,14 +71,9 @@ class Week1Activity : AppCompatActivity() {
                     val dialog: AlertDialog = builder.create()
                     dialog.show()
                 }
-                else {
-                    txt_answer.text = "Answer is : ${num1 + num2} "
-                }
             }
-
-
-
         }
+
     }
 
 
