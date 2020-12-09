@@ -78,25 +78,22 @@ class Week1Activity : AppCompatActivity() {
     fun CheckAns(){
         if(etNumber1.text.isEmpty())
         {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("WARNING")
-            builder.setMessage("Please Input Your Number")
-            builder.setPositiveButton("OK"){Dialog, which ->
-                Toast.makeText(applicationContext," Please correct ",Toast.LENGTH_SHORT).show()
-            }
-            val dialog: AlertDialog = builder.create()
-            dialog.show()
+            DialogAlert()
         }
         else if(etNumber2.text.isEmpty())
         {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("WARNING")
-            builder.setMessage("Please Input Your Number")
-            builder.setPositiveButton("OK"){Dialog, which ->
-                Toast.makeText(applicationContext," Please correct ",Toast.LENGTH_SHORT).show()
-            }
-            val dialog: AlertDialog = builder.create()
-            dialog.show()
+            DialogAlert()
         }
+    }
+
+    fun DialogAlert(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("WARNING")
+        builder.setMessage("Please Input Your Number")
+        builder.setPositiveButton("OK"){Dialog, which ->
+            Toast.makeText(applicationContext," Please correct ",Toast.LENGTH_SHORT).show()
+        }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }
