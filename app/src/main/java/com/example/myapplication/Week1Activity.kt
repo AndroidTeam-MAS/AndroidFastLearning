@@ -18,15 +18,13 @@ class Week1Activity : AppCompatActivity() {
     private lateinit var rbInteger: RadioButton
     private lateinit var btAnswer: Button
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_week1)
 
 
         settingUI()
-        Answer()
+        answer()
 
     }
 
@@ -41,59 +39,39 @@ class Week1Activity : AppCompatActivity() {
         rbInteger = findViewById(R.id.rbInteger)
     }
 
-    fun Answer(){
+    fun dialogAlert(isCatch: Boolean,errorMassage: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("WARNING")
+        builder.setMessage(errorMassage)
+        builder.setPositiveButton("OK") { Dialog, which ->
+            Toast.makeText(applicationContext, " Please correct ", Toast.LENGTH_SHORT).show()
+        }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    fun answer() {
         btAnswer.setOnClickListener {
             try {
+                checkAns()
                 val num1 = etNumber1.text.toString()
                 val num2 = etNumber2.text.toString()
-
-                CheckAns()
-
                 if (rbString.isChecked) {
                     tvAnswer.text = "Answer is : " + num1 + num2
                 } else if (rbInteger.isChecked) {
                     tvAnswer.text = "Answer is : " + (num1.toInt() + num2.toInt())
                 }
-            }
-            catch (e:Exception){
-                val builder = AlertDialog.Builder(this)
-                builder.setTitle("WARNING")
-                builder.setMessage("Do not enter letters Can only enter numbers")
-                builder.setPositiveButton("OK"){Dialog, which ->
-                    Toast.makeText(applicationContext," Please correct ",Toast.LENGTH_SHORT).show()
-                    etNumber1.text.clear()
-                    etNumber2.text.clear()
-                    tvAnswer.setText("")
-                    rbInteger.isChecked = false
-                    rbString.isChecked = false
-                }
-                val dialog: AlertDialog = builder.create()
-                dialog.show()
-            }
-            finally {
-
+            } catch (e: Exception) {
+                dialogAlert(true,"Please enter numbers only.")
             }
         }
     }
-    fun CheckAns(){
-        if(etNumber1.text.isEmpty())
-        {
-            DialogAlert()
-        }
-        else if(etNumber2.text.isEmpty())
-        {
-            DialogAlert()
-        }
-    }
 
-    fun DialogAlert(){
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("WARNING")
-        builder.setMessage("Please Input Your Number")
-        builder.setPositiveButton("OK"){Dialog, which ->
-            Toast.makeText(applicationContext," Please correct ",Toast.LENGTH_SHORT).show()
+    fun checkAns() {
+        if (etNumber1.text.isEmpty()) {
+            dialogAlert(false,"Please enter your numbers.")
+        } else if (etNumber2.text.isEmpty()) {
+            dialogAlert(false,"Please enter your numbers.")
         }
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
     }
 }
