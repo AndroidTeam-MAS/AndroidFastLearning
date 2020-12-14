@@ -12,7 +12,6 @@ class Week1Activity : AppCompatActivity() {
     private lateinit var etNumber2: EditText
     private lateinit var tvOperator: TextView
     private lateinit var tvAnswer: TextView
-
     var rgGroup: RadioGroup? = null
     private lateinit var rbString: RadioButton
     private lateinit var rbInteger: RadioButton
@@ -72,6 +71,8 @@ class Week1Activity : AppCompatActivity() {
             dialogAlert(false,"Please enter your numbers.")
         } else if (etNumber2.text.isEmpty()) {
             dialogAlert(false,"Please enter your numbers.")
+        } else if (rbString.isChecked == false && rbInteger.isChecked == false){
+            dialogAlert(false,"Please select datatype")
         }
     }
 }
