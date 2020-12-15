@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.core.graphics.convertTo
 import java.lang.Exception
 
 class Week1Activity : AppCompatActivity() {
@@ -38,7 +39,7 @@ class Week1Activity : AppCompatActivity() {
         rbInteger = findViewById(R.id.rbInteger)
     }
 
-    fun dialogAlert(isCatch: Boolean,errorMassage: String) {
+    fun dialogAlert(isCatch: Boolean ,errorMassage: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("WARNING")
         builder.setMessage(errorMassage)
@@ -51,17 +52,20 @@ class Week1Activity : AppCompatActivity() {
 
     fun answer() {
         btAnswer.setOnClickListener {
-            try {
-                checkAns()
-                val num1 = etNumber1.text.toString()
-                val num2 = etNumber2.text.toString()
-                if (rbString.isChecked) {
-                    tvAnswer.text = "Answer is : " + num1 + num2
-                } else if (rbInteger.isChecked) {
+            checkAns()
+            var num1 = etNumber1.text.toString()
+            var num2 = etNumber2.text.toString()
+            if (rbString.isChecked) {
+                tvAnswer.text = "Answer is : " + num1 + num2
+            }
+            else if (rbInteger.isChecked) {
+                if (num1.toIntOrNull() ?: true == true ||
+                        num2.toIntOrNull() ?: true == true) {
+                    dialogAlert(true,"Please enter numbers only.")
+                }
+                else {
                     tvAnswer.text = "Answer is : " + (num1.toInt() + num2.toInt())
                 }
-            } catch (e: Exception) {
-                dialogAlert(true,"Please enter numbers only.")
             }
         }
     }
