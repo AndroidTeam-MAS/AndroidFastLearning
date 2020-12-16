@@ -1,11 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import androidx.core.graphics.convertTo
-import java.lang.Exception
+import com.example.myapplication.R
 
 class Week1Activity : AppCompatActivity() {
 
@@ -37,6 +36,7 @@ class Week1Activity : AppCompatActivity() {
         btAnswer = findViewById(R.id.btAnswer)
         rbString = findViewById(R.id.rbString)
         rbInteger = findViewById(R.id.rbInteger)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     fun dialogAlert(isCatch: Boolean ,errorMassage: String) {
@@ -59,7 +59,7 @@ class Week1Activity : AppCompatActivity() {
                 tvAnswer.text = "Answer is : " + num1 + num2
             }
             else if (rbInteger.isChecked) {
-                if (num1.toIntOrNull() ?: true == true ||
+                if (num1.toIntOrNull() ?: true == true &&
                         num2.toIntOrNull() ?: true == true) {
                     dialogAlert(true,"Please enter numbers only.")
                 }
