@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Activity.EditProfile">
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="450dp"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="32dp"
         app:layout_constraintBottom_toBottomOf="parent"

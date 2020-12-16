@@ -1,8 +1,8 @@
 package com.example.myapplication.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -19,7 +19,7 @@ class Week2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_week2)
-
+        setiingID()
         register()
     }
 
@@ -33,15 +33,15 @@ class Week2Activity : AppCompatActivity() {
 
 
     fun checkEmpty() {
-        if (etName.toString().equals("")) {
+        if (etName.text.equals("")) {
             dialogAlert("Please enter your firstname")
             //etName.setError("Please enter your firstname")
         }
-        else if (etLastName.toString().equals("")) {
+        else if (etLastName.text.equals("")) {
             dialogAlert("Please enter your lastname")
             //etLastName.setError("Please enter your lastname")
         }
-        else if (etTelNo.toString().equals("")) {
+        else if (etTelNo.text.equals("")) {
             dialogAlert("Please enter your telephone number")
             //etTelNo.setError("Please enter your telephone number")
         }
@@ -60,19 +60,23 @@ class Week2Activity : AppCompatActivity() {
     }
 
     fun register(){
+        checkEmpty()
         btnRegister.setOnClickListener {
-            checkEmpty()
-            var firstName = etName.text.toString().trim()
-            var lastName = etLastName.text.toString().trim()
-            var telephone = etTelNo.text.toString().trim()
+            var firstname = etName.text.toString()
+            var lastname = etLastName.text.toString()
+            var telephone = etTelNo.text.toString()
+            //var user = User(etName.toString(),etLastName.toString(),etTelNo.toString())
+            var intent = Intent(this, DetailWeek2::class.java)
 
-
-
-
+            val user = userClass(firstname,lastname,telephone)
+            intent.putExtra("user",user)
+            startActivity(intent)
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
 }
+data class User(var firstname: String, var lastname: String, var phonenumber: String)
+
+
+
+
