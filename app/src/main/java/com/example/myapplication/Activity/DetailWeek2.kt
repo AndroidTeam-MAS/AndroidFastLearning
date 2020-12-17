@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import com.example.myapplication.R
-import org.w3c.dom.Text
 
 class DetailWeek2 : AppCompatActivity() {
 
@@ -21,7 +20,7 @@ class DetailWeek2 : AppCompatActivity() {
 
         settingID()
 
-       val user = intent.getParcelableExtra<userClass>("user") as userClass
+       val user = intent.getParcelableExtra<User>("user") as User
         var (firstname, lastname, telephone) = user
 
         tvFirstname.text = firstname

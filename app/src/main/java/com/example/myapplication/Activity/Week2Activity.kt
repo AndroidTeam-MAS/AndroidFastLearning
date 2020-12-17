@@ -68,14 +68,13 @@ class Week2Activity : AppCompatActivity() {
             //var user = User(etName.toString(),etLastName.toString(),etTelNo.toString())
             var intent = Intent(this, DetailWeek2::class.java)
 
-            val user = userClass(firstname,lastname,telephone)
+            val user = User(firstname,lastname,telephone)
             intent.putExtra("user",user)
             startActivity(intent)
         }
     }
 
 }
-data class User(var firstname: String, var lastname: String, var phonenumber: String)
 
 
 

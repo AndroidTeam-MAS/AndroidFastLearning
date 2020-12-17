@@ -3,16 +3,13 @@ package com.example.myapplication.Activity
 import android.os.Parcel
 import android.os.Parcelable
 
-data class userClass(
-    var firstname: String?,
-    var lastname: String?,
-    var telephone: String?
-) : Parcelable {
+data class User(var firstname: String?,
+           var lastname: String?,
+           var telephone: String?) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
-        parcel.readString()
-    ) {
+        parcel.readString()) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -25,12 +22,12 @@ data class userClass(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<userClass> {
-        override fun createFromParcel(parcel: Parcel): userClass {
-            return userClass(parcel)
+    companion object CREATOR : Parcelable.Creator<User> {
+        override fun createFromParcel(parcel: Parcel): User {
+            return User(parcel)
         }
 
-        override fun newArray(size: Int): Array<userClass?> {
+        override fun newArray(size: Int): Array<User?> {
             return arrayOfNulls(size)
         }
     }
