@@ -1,4 +1,4 @@
-package com.example.myapplication.Activity
+package com.example.myapplication.activity.week1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,14 +20,11 @@ class Week1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_week1)
-
-
-        settingUI()
+        findByID()
         answer()
-
     }
 
-    fun settingUI() {
+    private fun findByID() {
 
         etNumber1 = findViewById(R.id.etNumber1)
         etNumber2 = findViewById(R.id.etNumber2)
@@ -39,7 +36,7 @@ class Week1Activity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    fun dialogAlert(isCatch: Boolean ,errorMassage: String) {
+    private fun dialogAlert(isCatch: Boolean ,errorMassage: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("WARNING")
         builder.setMessage(errorMassage)
@@ -50,7 +47,7 @@ class Week1Activity : AppCompatActivity() {
         dialog.show()
     }
 
-    fun answer() {
+    private fun answer() {
         btAnswer.setOnClickListener {
             checkAns()
             var num1 = etNumber1.text.toString()
@@ -70,7 +67,7 @@ class Week1Activity : AppCompatActivity() {
         }
     }
 
-    fun checkAns() {
+    private fun checkAns() {
         if (etNumber1.text.isEmpty()) {
             dialogAlert(false,"Please enter your numbers.")
         } else if (etNumber2.text.isEmpty()) {

@@ -1,4 +1,4 @@
-package com.example.myapplication.Activity
+package com.example.myapplication.activity.week2
 
 import android.os.Parcel
 import android.os.Parcelable
@@ -6,7 +6,7 @@ import android.os.Parcelable
 data class User(
     var firstname: String?,
     var lastname: String?,
-    var telephone: String?) : Parcelable {
+    var telephone: String?,) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),

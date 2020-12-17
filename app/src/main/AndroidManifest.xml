@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Activity.DetailWeek2"></activity>
-        <activity android:name=".Activity.EditProfile" />
-        <activity android:name=".Activity.Week2Activity" />
-        <activity android:name=".Activity.Week1Activity" />
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".activity.week3.Week3Activity"></activity>
+        <activity android:name=".activity.week2.DetailWeek2Activity" />
+        <activity android:name=".activity.week2.EditProfileActivity" />
+        <activity android:name=".activity.week2.Week2Activity" />
+        <activity android:name=".activity.week1.Week1Activity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
