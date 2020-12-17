@@ -1,12 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import com.example.myapplication.databinding.ActivityMainBinding.inflate
-import java.time.Instant
+import com.example.myapplication.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,9 +19,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_week1 = findViewById(R.id.btn_week1)
+        btn_week2 = findViewById(R.id.btn_week2)
 
         btn_week1.setOnClickListener {
             var intent = Intent(this, Week1Activity::class.java)
+            startActivity(intent)
+        }
+
+        btn_week2.setOnClickListener {
+            var intent = Intent(this, Week2Activity::class.java)
             startActivity(intent)
         }
 
