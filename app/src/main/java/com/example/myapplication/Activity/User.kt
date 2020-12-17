@@ -3,9 +3,10 @@ package com.example.myapplication.Activity
 import android.os.Parcel
 import android.os.Parcelable
 
-data class User(var firstname: String?,
-           var lastname: String?,
-           var telephone: String?) : Parcelable {
+data class User(
+    var firstname: String?,
+    var lastname: String?,
+    var telephone: String?) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),

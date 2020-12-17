@@ -7,7 +7,7 @@
     tools:context=".Activity.EditProfile">
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:layout_height="500dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,29 +30,51 @@
                 android:text="Edit Profile"
                 android:textSize="30sp" />
 
+            <TextView
+                android:id="@+id/tvOldName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Change your First Name"
+                android:layout_marginTop="30dp"/>
+
+
             <EditText
                 android:id="@+id/etFirstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your Firstname"
-                android:layout_marginTop="30dp" />
+                android:hint="New Firstname"
+                android:layout_marginTop="15dp" />
+            <TextView
+                android:id="@+id/tvOldLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Change your Last Name"
+                android:layout_marginTop="30dp"/>
             <EditText
                 android:id="@+id/etLastname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:hint="Your Lastname" />
+                android:layout_marginTop="15dp"
+                android:hint="New Lastname" />
+            <TextView
+                android:id="@+id/tvOldNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Change your Phone Number"
+                android:layout_marginTop="30dp"/>
+
             <EditText
                 android:id="@+id/etTelephone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:hint="Your Telephone Number"/>
+                android:layout_marginTop="15dp"
+                android:inputType="number"
+                android:hint="New Telephone Number"/>
             <Button
                 android:id="@+id/btnEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="25dp"
                 android:text="UPDATE"/>
 
 

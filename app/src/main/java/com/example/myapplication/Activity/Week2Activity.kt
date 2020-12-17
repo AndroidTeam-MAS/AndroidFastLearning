@@ -45,7 +45,6 @@ class Week2Activity : AppCompatActivity() {
             dialogAlert("Please enter your telephone number")
             //etTelNo.setError("Please enter your telephone number")
         }
-
     }
 
     fun dialogAlert(errorMassage: String) {
@@ -65,12 +64,12 @@ class Week2Activity : AppCompatActivity() {
             var firstname = etName.text.toString()
             var lastname = etLastName.text.toString()
             var telephone = etTelNo.text.toString()
-            //var user = User(etName.toString(),etLastName.toString(),etTelNo.toString())
             var intent = Intent(this, DetailWeek2::class.java)
 
             val user = User(firstname,lastname,telephone)
             intent.putExtra("user",user)
             startActivity(intent)
+            finish()
         }
     }
 
