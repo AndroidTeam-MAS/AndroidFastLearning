@@ -1,16 +1,15 @@
-package com.example.myapplication.Activity
+package com.example.myapplication.activity.week2
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 
-class DetailWeek2 : AppCompatActivity() {
+class DetailWeek2Activity : AppCompatActivity() {
 
     private lateinit var tvFirstname: TextView
     private lateinit var tvLastname: TextView
@@ -22,11 +21,11 @@ class DetailWeek2 : AppCompatActivity() {
 
         settingID()
         intentData()
-        intentUpdate()
+        //intentUpdate()
     }
 
 
-    fun intentData(){
+    private fun intentData(){
         try {
             val user = intent.getParcelableExtra<User>("user") as User
             var (firstname, lastname, telephone) = user
@@ -39,8 +38,7 @@ class DetailWeek2 : AppCompatActivity() {
             dialogAlert("${ex}")
         }
     }
-
-    fun intentUpdate(){
+    /*fun intentUpdate(){
         try {
             val updateUser = intent.getParcelableExtra<User>("update") as User
             var (firstname, lastname, telephone) = updateUser
@@ -51,9 +49,9 @@ class DetailWeek2 : AppCompatActivity() {
         catch (e : Exception){
             dialogAlert("${e}")
         }
-    }
+    }*/
 
-    fun settingID(){
+    private fun settingID(){
         tvFirstname = findViewById(R.id.tvFirstname)
         tvLastname = findViewById(R.id.tvLastname)
         tvTelephone = findViewById(R.id.tvTelephone)
@@ -70,26 +68,19 @@ class DetailWeek2 : AppCompatActivity() {
 
         if (item != null) {
             if (item.itemId == R.id.menu_setting) {
-                var intent = Intent(this, EditProfile::class.java)
+                var intent = Intent(this, EditProfileActivity::class.java)
+                val firstName = tvFirstname.text.toString()
+                val lastName = tvLastname.text.toString()
+                val telephone = tvTelephone.text.toString()
+                val user = User(firstName,lastName,telephone)
+                intent.putExtra("update",user)
                 startActivity(intent)
-                finish()
             }
         }
         return true
     }
 
-    override fun onPause() {
-        super.onPause()
-        intentUpdate()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Toast.makeText(this,"Resume",Toast.LENGTH_SHORT).show()
-    }
-
-
-    fun dialogAlert(textMassage: String) {
+    private fun dialogAlert(textMassage: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("WARNING")
         builder.setMessage(textMassage)

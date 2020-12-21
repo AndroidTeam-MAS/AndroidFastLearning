@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="msgError">Please enter you Data Information</string>
+    <string name="msgErrorLastName">Please enter you last name</string>
+    <string name="msgErrorNumber">Please enter you Phone Number</string>
+    <string name="txtWelcome">Welcome</string>
+    <string name="btnAnswer">ANSWER</string>
+    <string name="txtOperater">+</string>
+    <string name="txtFirstName">Enter your first name</string>
+    <string name="btnRegister">REGISTER</string>
+    <string name="txtTel">Enter you Tel.</string>
+    <string name="txtLastName">Enter your last name</string>
+    <string name="hintTelnum">Your Telephone Number</string>
+    <string name="txtHintLastName">Your Last Name</string>
+    <string name="txtHintFirstName">Your First Name</string>
+    <string name="titleText">PROFILE</string>
+    <string name="titleTextEdit">Edit Profile</string>
+    <string name="txtChangeName">Change your First Name</string>
+    <string name="hintChangeName">New FirstName</string>
+    <string name="txtChangeLastName">Change your Last Name</string>
+    <string name="hintChangeLastName">New LastName</string>
+    <string name="txtChangeTel">Change your Phone Number</string>
+    <string name="hintChangeTel">New Telephone Number</string>
+    <string name="btnUpdate">UPDATE</string>
 </resources>

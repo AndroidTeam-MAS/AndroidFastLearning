@@ -1,4 +1,4 @@
-package com.example.myapplication.Activity
+package com.example.myapplication.activity.week2
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -23,7 +23,8 @@ class Week2Activity : AppCompatActivity() {
         register()
     }
 
-    fun setiingID(){
+
+   private fun setiingID(){
         etName = findViewById(R.id.etName)
         etLastName = findViewById(R.id.etLastName)
         etTelNo = findViewById(R.id.etTelNo)
@@ -32,22 +33,22 @@ class Week2Activity : AppCompatActivity() {
     }
 
 
-    fun checkEmpty() {
+    private fun checkEmpty() {
         if (etName.text.equals("")) {
-            dialogAlert("Please enter your firstname")
+            dialogAlert(getString(R.string.msgError))
             //etName.setError("Please enter your firstname")
         }
         else if (etLastName.text.equals("")) {
-            dialogAlert("Please enter your lastname")
+            dialogAlert(getString(R.string.msgErrorLastName)) // แก้
             //etLastName.setError("Please enter your lastname")
         }
         else if (etTelNo.text.equals("")) {
-            dialogAlert("Please enter your telephone number")
+            dialogAlert(getString(R.string.msgErrorNumber))
             //etTelNo.setError("Please enter your telephone number")
         }
     }
 
-    fun dialogAlert(errorMassage: String) {
+     private fun dialogAlert(errorMassage: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("WARNING")
         builder.setMessage(errorMassage)
@@ -58,18 +59,22 @@ class Week2Activity : AppCompatActivity() {
         dialog.show()
     }
 
-    fun register(){
-        checkEmpty()
+    private fun register(){
         btnRegister.setOnClickListener {
-            var firstname = etName.text.toString()
-            var lastname = etLastName.text.toString()
-            var telephone = etTelNo.text.toString()
-            var intent = Intent(this, DetailWeek2::class.java)
-
+            val firstname = etName.text.toString()
+            val lastname = etLastName.text.toString()
+            val telephone = etTelNo.text.toString()
+            val intent = Intent(this, DetailWeek2Activity::class.java)
             val user = User(firstname,lastname,telephone)
             intent.putExtra("user",user)
-            startActivity(intent)
-            finish()
+            if (etName.text.isNullOrEmpty() || etLastName.text.isNullOrEmpty() || etTelNo.text.isNullOrEmpty()) {
+                dialogAlert(getString(R.string.msgError))
+
+            }
+            else{
+                startActivity(intent)
+                finish()
+            }
         }
     }
 

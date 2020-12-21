@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titleTextsize">30sp</dimen>
+    <dimen name="txtSize">25dp</dimen>
+    <dimen name="titleTextsizeProfile">45dp</dimen>
+    <dimen name="maginTopEditText">15dp</dimen>
+    <dimen name="maginTopTextView">30dp</dimen>
+    <dimen name="maginTopTitle">10dp</dimen>
+    <dimen name="button">25dp</dimen>
+</resources>

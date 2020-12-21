@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.DetailWeek2">
+    tools:context=".activity.week2.DetailWeek2Activity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -29,32 +29,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Profile"
-                android:textSize="45dp" />
+                android:text="@string/titleText"
+                android:textSize="@dimen/titleTextsizeProfile" />
 
             <TextView
                 android:id="@+id/tvFirstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:hint="Your Firstname"
-                android:textSize="25dp" />
+                android:hint="@string/txtHintFirstName"
+                android:textSize="@dimen/txtSize" />
 
             <TextView
                 android:id="@+id/tvLastname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:hint="Your Lastname"
-                android:textSize="25dp" />
+                android:hint="@string/txtHintLastName"
+                android:textSize="@dimen/txtSize" />
 
             <TextView
                 android:id="@+id/tvTelephone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:hint="Your Telephone Number"
-                android:textSize="25dp" />
+                android:hint="@string/hintTelnum"
+                android:textSize="@dimen/txtSize" />
 
 
         </LinearLayout>
