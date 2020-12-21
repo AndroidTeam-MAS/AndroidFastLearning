@@ -26,15 +26,14 @@ class EditProfileActivity : AppCompatActivity() {
         settingID()
         intentData()
         updateInformation()
-
     }
     private fun intentData(){
         try {
             val user = intent.getParcelableExtra<User>("update") as User
             var (firstName, lastName, telephone) = user
-            etFirstname.hint = firstName
-            etLastname.hint = lastName
-            etTelephone.hint = telephone
+            etFirstname.setText(firstName)
+            etLastname.setText(lastName)
+            etTelephone.setText(telephone)
         }
         catch (ex: Exception){
             dialogAlert("${ex}")
