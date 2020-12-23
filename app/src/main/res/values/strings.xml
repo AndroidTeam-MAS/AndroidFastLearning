@@ -22,4 +22,28 @@
     <string name="txtChangeTel">Change your Phone Number</string>
     <string name="hintChangeTel">New Telephone Number</string>
     <string name="btnUpdate">UPDATE</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">FORGOT PASSWORD</string>
+    <string name="or">or</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_detail_week3_show">DetailWeek3ShowActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="rbInt">Integer</string>
+    <string name="rbString">String</string>
+    <string name="msgWeek1error">Please enter number only.</string>
+    <string name="msgEdittextEmpty">Please enter your numbers.</string>
+    <string name="msgSelectRadio">Please select datatype</string>
+    <string name="title_activity_main_tab">MainTabActivity</string>
+    <string name="msgWeek3UserPass">Please enter username or password</string>
+    <string name="txtTab1">WEEK1</string>
+    <string name="txtTab2">WEEK2</string>
+
+    <string-array name="tab_title">
+        <item>WEEK1</item>
+        <item>WEEK2</item>
+    </string-array>
 </resources>

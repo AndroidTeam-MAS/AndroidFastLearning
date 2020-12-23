@@ -65,13 +65,9 @@ class EditProfileActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-
         }
     }
 
-    private fun checkEmpty() {
-
-    }
     private fun dialogAlert(textMassage: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("WARNING")
