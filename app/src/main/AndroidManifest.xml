@@ -9,12 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".activity.week3.Week3Activity"></activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_main_tab"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.week3.DetailWeek3ShowActivity"
+            android:label="@string/title_activity_detail_week3_show"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+        <activity android:name=".activity.week3.DetailWeek3Activity" />
+        <activity android:name=".activity.week3.Week3Activity" />
         <activity android:name=".activity.week2.DetailWeek2Activity" />
         <activity android:name=".activity.week2.EditProfileActivity" />
         <activity android:name=".activity.week2.Week2Activity" />
         <activity android:name=".activity.week1.Week1Activity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainTabActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

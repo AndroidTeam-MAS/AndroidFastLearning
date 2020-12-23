@@ -7,36 +7,35 @@ import android.widget.Button
 import com.example.myapplication.R
 import com.example.myapplication.activity.week1.Week1Activity
 import com.example.myapplication.activity.week2.Week2Activity
+import com.example.myapplication.activity.week3.Week3Activity
+import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btn_week1: Button
-    private lateinit var btn_week2: Button
-    private lateinit var btn_week3: Button
-
-
-
+    private lateinit var binding: ActivityMainBinding
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn_week1 = findViewById(R.id.btn_week1)
-        btn_week2 = findViewById(R.id.btn_week2)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btn_week1.setOnClickListener {
+
+        binding.btnWeek1.setOnClickListener {
             var intent = Intent(this, Week1Activity::class.java)
             startActivity(intent)
         }
 
-        btn_week2.setOnClickListener {
+        binding.btnWeek2.setOnClickListener {
             var intent = Intent(this, Week2Activity::class.java)
             startActivity(intent)
         }
 
-
-
-
-
+        binding.btnWeek3.setOnClickListener {
+            var intent = Intent(this,Week3Activity::class.java)
+            startActivity(intent)
+        }
     }
 }
 
