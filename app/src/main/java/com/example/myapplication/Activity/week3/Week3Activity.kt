@@ -49,8 +49,7 @@ class Week3Activity : AppCompatActivity() {
         }
 
         binding.ScrollLogin.apply {
-            isVerticalScrollBarEnabled = false
-            isHorizontalScrollBarEnabled = false
+
         }
     }
 

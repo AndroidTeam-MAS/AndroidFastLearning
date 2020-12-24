@@ -2,11 +2,15 @@ package com.example.myapplication.activity
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager2.widget.ViewPager2
+import com.example.myapplication.R
 import com.example.myapplication.activity.ui.main.SectionsPagerAdapter
 import com.example.myapplication.databinding.ActivityMainTabBinding
 import com.example.myapplication.databinding.CustomTabMenuBinding
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -26,14 +30,13 @@ class MainTabActivity : AppCompatActivity() {
         setupWidget()
         setupTab()
 
-
-
-
     }
+
+
 
     private fun setupTab() {
         TabLayoutMediator(binding.tabs, binding.viewPager,
-            TabLayoutMediator.TabConfigurationStrategy{ xTab, xPosition ->
+            TabLayoutMediator.TabConfigurationStrategy { xTab, xPosition ->
                 val binding = CustomTabMenuBinding.inflate(layoutInflater)
                 binding.tabWeek1.text = (sectionsPagerAdapter.tabText[xPosition])
                 xTab.customView = binding.root
@@ -52,10 +55,10 @@ class MainTabActivity : AppCompatActivity() {
             adapter = sectionsPagerAdapter
         }.also {
             it.setPageTransformer(HorizontalFlipTransformation())
-            it.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            it.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
-                    if(position == 0){
+                    if (position == 0) {
                         binding.fab.visibility = View.INVISIBLE
                     } else {
                         binding.fab.visibility = View.INVISIBLE
@@ -64,4 +67,5 @@ class MainTabActivity : AppCompatActivity() {
             })
         }
     }
+
 }
