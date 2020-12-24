@@ -1,87 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.week2.Week2Activity">
-    <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
-        android:layout_height="500dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
+    <FrameLayout
+        android:id="@+id/flWeek2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <TextView
-                android:layout_marginTop="@dimen/maginTopTitle"
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/txtWelcome"
-                android:textSize="@dimen/titleTextsize" />
 
-            <TextView
-                android:id="@+id/tvEnterName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/txtFirstName"
-                android:layout_marginTop="@dimen/maginTopTextView"/>
+    </FrameLayout>
 
-            <EditText
-                android:id="@+id/etName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/maginTopEditText"
-                android:ems="10"
-                android:inputType="text" />
-
-            <TextView
-                android:id="@+id/tvEnterLastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/txtLastName"
-                android:layout_marginTop="@dimen/maginTopTextView"/>
-
-            <EditText
-                android:id="@+id/etLastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/maginTopEditText"
-                android:ems="10"
-                android:inputType="text" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/txtTel"
-                android:layout_marginTop="@dimen/maginTopTextView"/>
-
-            <EditText
-                android:id="@+id/etTelNo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/maginTopEditText"
-                android:ems="10"
-                android:inputType="number" />
-
-            <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/teal_200"
-                android:layout_marginTop="@dimen/maginTopButton"
-                android:text="@string/btnRegister" />
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

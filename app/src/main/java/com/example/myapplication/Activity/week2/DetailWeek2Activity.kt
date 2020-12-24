@@ -11,6 +11,7 @@ import com.example.myapplication.R
 
 class DetailWeek2Activity : AppCompatActivity() {
 
+
     private lateinit var tvFirstname: TextView
     private lateinit var tvLastname: TextView
     private lateinit var tvTelephone: TextView
@@ -69,10 +70,10 @@ class DetailWeek2Activity : AppCompatActivity() {
         if (item != null) {
             if (item.itemId == R.id.menu_setting) {
                 var intent = Intent(this, EditProfileActivity::class.java)
-                val firstName = tvFirstname.text.toString()
-                val lastName = tvLastname.text.toString()
+                val firstname = tvFirstname.text.toString()
+                val lastname = tvLastname.text.toString()
                 val telephone = tvTelephone.text.toString()
-                val user = User(firstName,lastName,telephone)
+                val user = User(firstname,lastname,telephone)
                 intent.putExtra("update",user)
                 startActivity(intent)
             }
