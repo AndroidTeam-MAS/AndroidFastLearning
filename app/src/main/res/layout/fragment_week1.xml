@@ -1,72 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:paddingStart="100dp"
-    android:paddingEnd="100dp"
-    tools:context=".activity.week1.fragment.Week1Fragment">
-
-    <EditText
+    android:layout_gravity="center"
+    android:paddingStart="50dp"
+    android:paddingEnd="50dp"
+    tools:context=".fragment.Week1Fragment">
+    <ScrollView
+        android:id="@+id/scrollWeek1"
+        android:paddingTop="150dp"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tvNum1"
+            android:text="@string/txtEnterData"/>
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etNumber2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvOperator"
         android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtOperater"
         android:textSize="36sp" />
-
-    <EditText
+<androidx.appcompat.widget.AppCompatTextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/tvNum2"
+    android:text="@string/txtEnterData"/>
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etNumber1"
         android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"/>
-
-    <Button
-        android:id="@+id/btAnswer"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btnAnswer" />
-
     <RadioGroup
         android:id="@+id/rgGroup"
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content">
 
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/rbString"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rbString" />
-        <View
-            android:layout_width="65dp"
-            android:layout_height="match_parent" />
 
-        <RadioButton
+
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/rbInteger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rbInt" />
     </RadioGroup>
 
-    <TextView
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btAnswer"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnAnswer" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvAnswer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/textSizeAnswer"
         android:gravity="center" />
-
-
+    </LinearLayout>
+    </ScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

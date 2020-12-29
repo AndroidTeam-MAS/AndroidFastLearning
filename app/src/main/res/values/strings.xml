@@ -1,60 +1,44 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="msgError">Please enter you Data Information</string>
-    <string name="msgErrorLastName">Please enter you last name</string>
-    <string name="msgErrorNumber">Please enter you Phone Number</string>
-    <string name="txtWelcome">Welcome</string>
-    <string name="btnAnswer">ANSWER</string>
-    <string name="txtOperater">+</string>
-    <string name="txtFirstName">Enter your first name</string>
-    <string name="btnRegister">REGISTER</string>
-    <string name="txtTel">Enter you Tel.</string>
-    <string name="txtLastName">Enter your last name</string>
-    <string name="hintTelnum">Your Telephone Number</string>
-    <string name="txtHintLastName">Your Last Name</string>
-    <string name="txtHintFirstName">Your First Name</string>
-    <string name="titleText">PROFILE</string>
-    <string name="titleTextEdit">Edit Profile</string>
-    <string name="txtChangeName">Change your First Name</string>
-    <string name="hintChangeName">New FirstName</string>
-    <string name="txtChangeLastName">Change your Last Name</string>
-    <string name="hintChangeLastName">New LastName</string>
-    <string name="txtChangeTel">Change your Phone Number</string>
-    <string name="hintChangeTel">New Telephone Number</string>
-    <string name="btnUpdate">UPDATE</string>
-    <string name="username">username</string>
-    <string name="password">password</string>
-    <string name="login">LOGIN</string>
-    <string name="forgot_password">FORGOT PASSWORD</string>
-    <string name="or">or</string>
+    <string name="txtWeek1">WEEK 1</string>
+    <string name="txtWeek2">WEEK 2</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_detail_week3_show">DetailWeek3ShowActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="rbInt">Integer</string>
-    <string name="rbString">String</string>
+    <string name="hello_blank_fragment2">Hello blank fragment2</string>
+    <string name="txtOperater">+</string>
+    <string name="btnAnswer">ANSWER</string>
+    <string name="rbString">STRING</string>
+    <string name="rbInt">INTEGER</string>
+    <string name="msgEdittextEmpty">Please enter your text</string>
+    <string name="msgSelectRadio">Please select dataType</string>
     <string name="msgWeek1error">Please enter number only.</string>
-    <string name="msgEdittextEmpty">Please enter your numbers.</string>
-    <string name="msgSelectRadio">Please select datatype</string>
-    <string name="title_activity_main_tab">MainTabActivity</string>
-    <string name="msgWeek3UserPass">Please enter username or password</string>
-    <string name="txtTab1">WEEK1</string>
-    <string name="txtTab2">WEEK2</string>
-
-    <string-array name="tab_title">
-        <item>WEEK1</item>
-        <item>WEEK2</item>
-    </string-array>
-    <string name="title_activity_navigate_drawer">NavigateDrawerActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="txtWelcome">WELCOME</string>
+    <string name="txtFirstName">Enter you first name</string>
+    <string name="txtLastName">Enter you last name</string>
+    <string name="txtTel">Enter you number</string>
+    <string name="btnRegister">REGISTER</string>
+    <string name="titleText">PROFILE</string>
+    <string name="txtHintFirstName">You first name</string>
+    <string name="txtHintLastName">You last name</string>
+    <string name="hintTelnum">You number</string>
+    <string name="titleTextEdit">EDIT PROFILE</string>
+    <string name="txtChangeName">Change you first name</string>
+    <string name="txtChangeLastName">Change you last name</string>
+    <string name="txtChangeTel">Change you number</string>
+    <string name="btnUpdate">UPDATE</string>
+    <string name="title_activity_week2">Week2Activity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_detail_week2">DetailWeek2Activity</string>
+    <string name="title_activity_edit_profile">EditProfileActivity</string>
+    <string name="msgError">Please enter you Data Information</string>
+    <string name="msgErrorLastName">Please enter you last name</string>
+    <string name="msgErrorNumber">Please enter you number</string>
+    <string name="msgTitleDialog">WARNING</string>
+    <string name="msgToastDialog">Please Correct !!</string>
+    <string name="msgButtonDialog">OK</string>
+    <string name="txtEnterData">Enter Data</string>
 </resources>

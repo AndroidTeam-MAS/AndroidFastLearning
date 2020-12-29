@@ -3,12 +3,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.week2.fragment.EditWeek2Fragment">
+    android:orientation="vertical"
+    tools:context=".week2.fragment.EditWeek2Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:clipToPadding="false"
+        android:paddingTop="50sp">
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/maginTopTitle"
+                    android:text="@string/titleTextEdit"
+                    android:textSize="@dimen/titleTextsize" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOldName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/maginTopTextView"
+                    android:text="@string/txtChangeName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/maginTopEditText"
+                    android:inputType="text" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOldLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/maginTopTextView"
+                    android:text="@string/txtChangeLastName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/maginTopEditText"
+                    android:inputType="text" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOldNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/maginTopTextView"
+                    android:text="@string/txtChangeTel" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etTelephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/maginTopEditText"
+                    android:inputType="number" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/maginTopButton"
+                    android:text="@string/btnUpdate" />
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
 </FrameLayout>
