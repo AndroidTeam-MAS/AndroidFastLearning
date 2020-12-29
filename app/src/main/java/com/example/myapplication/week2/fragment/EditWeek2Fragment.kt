@@ -1,13 +1,12 @@
 package com.example.myapplication.week2.fragment
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 
 class EditWeek2Fragment : Fragment() {
@@ -78,17 +77,20 @@ class EditWeek2Fragment : Fragment() {
     }
     private fun updateInformation() {
         bindDingView()
+        if (etFirstName.text.isNullOrEmpty() || etLastName.text.isNullOrEmpty() || etTelephone.text.isNullOrEmpty()){}
         val firstName = etFirstName.text.toString().trim()
         val lastName = etLastName.text.toString().trim()
         val telephone = etTelephone.text.toString().trim()
-        val intent = Intent(context, DetailWeek2Activity::class.java)
-        val user = User(firstName, lastName, telephone)
-        intent.putExtra("user", user)
-        if (etFirstName.text.isNullOrEmpty() || etLastName.text.isNullOrEmpty() || etTelephone.text.isNullOrEmpty()){
-            // dialogAlert(getString(R.string.msgError))
-        }
-        else {
-            
-        }
+        val fragmentWeek2: DetailWeek2Fragment = DetailWeek2Fragment.newInstance(
+            firstName = firstName,
+            lastName = lastName,
+            number = telephone
+        )
+        val fragmentTransaction = fragmentManager?.beginTransaction()
+        fragmentTransaction?.replace(R.id.flDetailWeek2, fragmentWeek2)
+            ?.addToBackStack(null)
+        fragmentTransaction?.commit()
+
+
     }
 }

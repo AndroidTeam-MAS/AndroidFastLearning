@@ -2,11 +2,11 @@ package com.example.myapplication.fragment
 
 import android.app.AlertDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 
 class Week1Fragment : Fragment() {
@@ -28,7 +28,7 @@ class Week1Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        answer()
+        answerForWeek1()
     }
 
     private fun bindDingView() {
@@ -40,7 +40,7 @@ class Week1Fragment : Fragment() {
         btAnswer = view?.findViewById(R.id.btAnswer)!!
     }
 
-    private fun answer() {
+    private fun answerForWeek1() {
         view?.findViewById<Button>(R.id.btAnswer)?.setOnClickListener {
             bindDingView()
             if (etNumber1.text.isNullOrEmpty()) {
@@ -77,4 +77,5 @@ class Week1Fragment : Fragment() {
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
+
 }

@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.myapplication.fragment.Week1Fragment
 import com.example.myapplication.week2.fragment.Week2Fragment
 
-class MyAdapter(fm: FragmentManager): FragmentPagerAdapter(fm) {
+class ViewPagerAdapter(fm: FragmentManager): FragmentPagerAdapter(fm) {
     override fun getCount(): Int {
         return 2
     }

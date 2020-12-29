@@ -48,9 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:dotsColor="#7E7D7D"
-            app:dotsStrokeColor="@color/white"/>
-
-
+            app:dotsStrokeColor="#7E7D7D"/>
     </FrameLayout>
 
     <com.google.android.material.navigation.NavigationView

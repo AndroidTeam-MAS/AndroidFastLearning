@@ -60,6 +60,7 @@ class Week2Fragment : Fragment() {
         }
     }
 
+
     private fun dialogAlert(errorMassage: String) {
         val builder = android.app.AlertDialog.Builder(context)
         builder.setTitle(getString(R.string.msgTitleDialog))

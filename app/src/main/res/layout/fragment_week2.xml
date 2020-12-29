@@ -12,7 +12,7 @@
         android:clipToPadding="false">
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingBottom="50dp"
@@ -26,7 +26,7 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_marginTop="@dimen/maginTopTitle"
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
@@ -34,14 +34,14 @@
                     android:text="@string/txtWelcome"
                     android:textSize="@dimen/titleTextsize" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvEnterName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/txtFirstName"
                     android:layout_marginTop="@dimen/maginTopTextView"/>
 
-                <EditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -49,14 +49,14 @@
                     android:ems="10"
                     android:inputType="text" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvEnterLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/txtLastName"
                     android:layout_marginTop="@dimen/maginTopTextView"/>
 
-                <EditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -64,21 +64,20 @@
                     android:ems="10"
                     android:inputType="text" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/txtTel"
                     android:layout_marginTop="@dimen/maginTopTextView"/>
 
-                <EditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etTelNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/maginTopEditText"
                     android:ems="10"
                     android:inputType="number" />
-
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

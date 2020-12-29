@@ -2,7 +2,6 @@ package com.example.myapplication
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -10,50 +9,60 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.example.myapplication.R.id.nav_item_one
-import com.example.myapplication.adapter.MyAdapter
+import com.example.myapplication.adapter.ViewPagerAdapter
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
-class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navView: NavigationView
+    private lateinit var toolbar: Toolbar
+    private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var viewPager: ViewPager
+    private lateinit var tabLayout: TabLayout
+    private lateinit var pagerAdapter: ViewPagerAdapter
+    private lateinit var dotsIndicator: WormDotsIndicator
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
+        detail()
+    }
 
-        val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
-        val navView: NavigationView = findViewById(R.id.navView)
-
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+    private fun bindDingView() {
+        drawerLayout = findViewById(R.id.drawerLayout)
+        navView = findViewById(R.id.navView)
+        toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        val viewPager = findViewById<ViewPager>(R.id.viewPager)
-        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
-        val pagerAdapter = MyAdapter(supportFragmentManager)
+        toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0)
+        viewPager = findViewById(R.id.viewPager)
+        tabLayout = findViewById(R.id.tabLayout)
+        pagerAdapter = ViewPagerAdapter(supportFragmentManager)
+        dotsIndicator = findViewById(R.id.dotViewPager)
+    }
 
-        val toggle = ActionBarDrawerToggle(this, drawerLayout,toolbar,0,0)
+    private fun detail() {
+        bindDingView()
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navView.setNavigationItemSelectedListener(this)
-
         viewPager.adapter = pagerAdapter
         tabLayout.setupWithViewPager(viewPager)
-        val dotsIndicator = findViewById<WormDotsIndicator>(R.id.dotViewPager)
         dotsIndicator.setViewPager(viewPager)
 
         viewPager.addOnPageChangeListener(
-            object: ViewPager.OnPageChangeListener{
-                override fun onPageSelected(position: Int) {
-                    val str = "page ${position +1}"
-                    Toast.makeText(baseContext,str,Toast.LENGTH_SHORT).show()
-                }
-
+            object : ViewPager.OnPageChangeListener {
+                override fun onPageSelected(position: Int) {}
                 override fun onPageScrolled(
                     position: Int,
                     positionOffset: Float,
-                    positionOffsetPixels: Int
-                ) {}
+                    positionOffsetPixels: Int,
+                ) {
+                }
 
                 override fun onPageScrollStateChanged(state: Int) {}
             }
@@ -68,8 +77,8 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
             }
             R.id.nav_item_two -> {
                 viewPager.currentItem = 1
-                }
             }
+        }
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

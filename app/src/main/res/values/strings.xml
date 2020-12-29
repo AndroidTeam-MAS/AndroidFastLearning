@@ -40,4 +40,5 @@
     <string name="msgTitleDialog">WARNING</string>
     <string name="msgToastDialog">Please Correct !!</string>
     <string name="msgButtonDialog">OK</string>
+    <string name="txtEnterData">Enter Data</string>
 </resources>

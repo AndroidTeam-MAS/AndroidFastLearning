@@ -1,6 +1,5 @@
 package com.example.myapplication.week2.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -34,6 +33,7 @@ class DetailWeek2Activity : AppCompatActivity() {
             val fragmentManager = supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.add(R.id.flDetailWeek2, fragmentWeek2)
+                .addToBackStack(null)
             fragmentTransaction.commit()
         }
         catch (ex: Exception){
@@ -60,7 +60,8 @@ class DetailWeek2Activity : AppCompatActivity() {
             val fragmentManager = supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.flDetailWeek2, fragmentWeek2)
-            .addToBackStack(null).commit()
+                .addToBackStack(null)
+            fragmentTransaction.commit()
         }
         return true
     }

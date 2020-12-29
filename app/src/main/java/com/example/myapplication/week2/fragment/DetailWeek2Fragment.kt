@@ -1,15 +1,12 @@
 package com.example.myapplication.week2.fragment
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.*
-import android.widget.EditText
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
-import org.w3c.dom.Text
 
 class DetailWeek2Fragment : Fragment() {
 
@@ -20,7 +17,6 @@ class DetailWeek2Fragment : Fragment() {
     private var firstName: String? = null
     private var lastName: String? = null
     private var number: String? = null
-
 
     companion object {
         const val EXTRA_FIRSTNAME = "extra_firstname"
@@ -68,6 +64,5 @@ class DetailWeek2Fragment : Fragment() {
         tvLastName.setText(lastName)
         tvTelephone.setText(number)
     }
-
 
 }
