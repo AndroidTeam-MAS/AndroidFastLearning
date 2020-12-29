@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,33 +13,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="false" />
+
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
         <activity
-            android:name=".activity.NavigateDrawerActivity"
-            android:label="@string/title_activity_navigate_drawer"
-            android:theme="@style/Theme.MyApplication.NoActionBar"></activity>
-        <activity
-            android:name=".activity.MainTabActivity"
-            android:label="@string/title_activity_main_tab"
-            android:theme="@style/Theme.MyApplication.NoActionBar">
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.week3.DetailWeek3Activity" />
-        <activity android:name=".activity.week3.Week3Activity" />
-        <activity android:name=".activity.week2.DetailWeek2Activity" />
-        <activity android:name=".activity.week2.EditProfileActivity" />
-        <activity android:name=".activity.week2.Week2Activity" />
-        <activity android:name=".activity.week1.Week1Activity" />
-        <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name=".week2.fragment.EditProfileActivity"
+            android:label="@string/title_activity_edit_profile">
         </activity>
+        <activity
+            android:name=".week2.fragment.DetailWeek2Activity"
+            android:label="@string/title_activity_detail_week2">
+        </activity>
+        <activity
+            android:name=".week2.fragment.Week2Activity"
+            android:label="@string/title_activity_week2">
+        </activity>
+
     </application>
 
 </manifest>

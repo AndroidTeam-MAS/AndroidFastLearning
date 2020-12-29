@@ -3,12 +3,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.week2.fragment.EditWeek2Fragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".week2.fragment.EditWeek2Fragment">
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:paddingTop="50sp"
+        android:clipToPadding="false">
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="32dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
 
+            <TextView
+                android:layout_marginTop="@dimen/maginTopTitle"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titleTextEdit"
+                android:textSize="@dimen/titleTextsize" />
+
+            <TextView
+                android:id="@+id/tvOldName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtChangeName"
+                android:layout_marginTop="@dimen/maginTopTextView"/>
+
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="@dimen/maginTopEditText" />
+            <TextView
+                android:id="@+id/tvOldLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtChangeLastName"
+                android:layout_marginTop="@dimen/maginTopTextView"/>
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/maginTopEditText"
+                android:inputType="text" />
+            <TextView
+                android:id="@+id/tvOldNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtChangeTel"
+                android:layout_marginTop="@dimen/maginTopTextView"/>
+
+            <EditText
+                android:id="@+id/etTelephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/maginTopEditText"
+                android:inputType="number" />
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/maginTopButton"
+                android:text="@string/btnUpdate"/>
+
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</ScrollView>
 </FrameLayout>

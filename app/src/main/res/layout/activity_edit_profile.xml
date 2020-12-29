@@ -1,85 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.week2.EditProfileActivity">
-    <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
-        android:layout_height="500dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <TextView
-                android:layout_marginTop="@dimen/maginTopTitle"
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/titleTextEdit"
-                android:textSize="@dimen/titleTextsize" />
-
-            <TextView
-                android:id="@+id/tvOldName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/txtChangeName"
-                android:layout_marginTop="@dimen/maginTopTextView"/>
-
-
-            <EditText
-                android:id="@+id/etFirstname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:layout_marginTop="@dimen/maginTopEditText" />
-            <TextView
-                android:id="@+id/tvOldLastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/txtChangeLastName"
-                android:layout_marginTop="@dimen/maginTopTextView"/>
-            <EditText
-                android:id="@+id/etLastname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/maginTopEditText"
-                android:inputType="text" />
-            <TextView
-                android:id="@+id/tvOldNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/txtChangeTel"
-                android:layout_marginTop="@dimen/maginTopTextView"/>
-
-            <EditText
-                android:id="@+id/etTelephone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/maginTopEditText"
-                android:inputType="number" />
-            <Button
-                android:id="@+id/btnEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/maginTopButton"
-                android:text="@string/btnUpdate"/>
-
-
-
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
+    tools:context=".week2.fragment.EditProfileActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/flEditWeek2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
